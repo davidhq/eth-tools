@@ -1,0 +1,8 @@
+{
+  "client": {
+    "idents": ["geth", "parity", "testrpc"],
+    "hosts": {
+      "localhost": [8545, 8600, 8700]
+    }
+  }
+}

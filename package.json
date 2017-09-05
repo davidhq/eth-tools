@@ -1,0 +1,21 @@
+{
+  "name": "eth-tools",
+  "version": "0.0.34",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "eth": "lib/eth.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "homedir": "^0.6.0",
+    "moment": "^2.18.1",
+    "table": "^4.0.1",
+    "web3": "^0.15.2"
+  }
+}
