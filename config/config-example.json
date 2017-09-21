@@ -1,8 +1,6 @@
 {
-  "client": {
-    "idents": ["geth", "parity", "testrpc"],
-    "hosts": {
-      "localhost": [8545, 8600, 8700]
-    }
+  "clients": ["geth", "parity", "testrpc"],
+  "nodes": {
+    "localhost": [8545, 8600, 8700]
   }
 }

@@ -1,21 +1,33 @@
 {
   "name": "eth-tools",
-  "version": "0.0.34",
+  "version": "0.0.38",
   "description": "",
   "main": "index.js",
   "bin": {
-    "eth": "lib/eth.js"
+    "eth": "index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidhq/eth-tools.git"
+  },
+  "author": "davidhq",
+  "license": "MIT",
   "dependencies": {
+    "cli-table2": "^0.2.0",
     "colors": "^1.1.2",
+    "commander": "=2.9.0",
     "homedir": "^0.6.0",
     "moment": "^2.18.1",
-    "table": "^4.0.1",
     "web3": "^0.15.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.7.1",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.3.0"
   }
 }

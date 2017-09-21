@@ -1,8 +1,12 @@
-# eth-tools
+# Eth Tools
 
 Command line tools for easy interaction with Ethereum nodes.
 
-At the moment only Ethereum node detection is available, more coming very soon.
+At the moment:
+ - Ethereum node detection
+ - account balance inspector
+
+more coming as needs arise.
 
 ## Prerequisites
 
@@ -26,6 +30,10 @@ You can also install both `node.js` and `git` via [Homebrew](https://brew.sh) fr
 
 ``eth``
 
+Help:
+
+``eth -h``
+
 ## Configure
 
 Create or edit the file `~/.eth-tools.json` (Linux/MacOS: */home/[user]*, Windows: *c:\\Users\\[user]*) containing instructions where to search for Ethereum nodes.
@@ -33,40 +41,39 @@ Create or edit the file `~/.eth-tools.json` (Linux/MacOS: */home/[user]*, Window
 ### Config file example
 ```
 {
-  "client": {
-    "idents": ["geth", "parity", "testrpc"],
-    "hosts": {
-      "localhost": [8545, 8600, 8700],
-      "some_host.com": [8545]
-    }
+  "clients": ["geth", "parity", "testrpc"],
+  "nodes": {
+    "localhost": [8545, 8600, 8700],
+    "some_host.com": [8545]
   }
 }
+```
+
+### Options
+
+```
+Usage: eth [options] [command]
+
+
+  Commands:
+
+    info               show the accessible nodes info (nodes are specified in config file)
+    balance [address]  get the balance on a given address
+
+  Eth command line tools
+
+  Options:
+
+    -h, --help         output usage information
+    -V, --version      output the version number
+    --host <host>      [Config]: Host of Ethereum node
+    -p, --port <port>  [Config]: Port on which the node is running
 ```
 
 ### Note
 
 If you run `eth` without this file present, it will create an example file for your convenience.
 
-## Example output
-```
-localhost:
-╔═════════╤═══════════════════════════════════════════════════════════════╤══════╤═══════════════════╤════════════╗
-║ client  │ version                                                       │ port │ latest block      │ up-to-date ║
-╟─────────┼───────────────────────────────────────────────────────────────┼──────┼───────────────────┼────────────╢
-║ geth    │ Geth/v1.6.7-stable/darwin-amd64/go1.8.3                       │ 8545 │ a month ago       │  ✗         ║
-╟─────────┼───────────────────────────────────────────────────────────────┼──────┼───────────────────┼────────────╢
-║ parity  │ Parity//v1.7.0-beta-5f2cabd-20170727/x86_64-macos/rustc1.18.0 │ 8600 │ a few seconds ago │  ✓         ║
-╟─────────┼───────────────────────────────────────────────────────────────┼──────┼───────────────────┼────────────╢
-║ testrpc │ EthereumJS TestRPC/v1.1.1/ethereum-js                         │ 8700 │ a few seconds ago │  ✓         ║
-╚═════════╧═══════════════════════════════════════════════════════════════╧══════╧═══════════════════╧════════════╝
-
-some_host.com:
-╔════════╤════════════════════════════════════════╤══════╤═══════════════════╤════════════╗
-║ client │ version                                │ port │ latest block      │ up-to-date ║
-╟────────┼────────────────────────────────────────┼──────┼───────────────────┼────────────╢
-║ geth   │ Geth/v1.6.7-stable/linux-amd64/go1.7.5 │ 8545 │ a few seconds ago │  ✓         ║
-╚════════╧════════════════════════════════════════╧══════╧═══════════════════╧════════════╝
-```
 
 ## Notes
 
