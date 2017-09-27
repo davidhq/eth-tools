@@ -8,6 +8,7 @@ module.exports = {
     return Object.assign(node, {
       version,
       client,
+      blockNumber: node.web3.eth.blockNumber,
       latestBlockDate: this.latestBlockDate(node),
       isRecent: this.isRecent(node),
       isOld: this.isOld(node),

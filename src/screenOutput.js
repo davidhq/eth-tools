@@ -8,7 +8,7 @@ module.exports = {
       chars: { mid: '', 'left-mid': '', 'mid-mid': '', 'right-mid': '' }
     });
 
-    const headers = ['host', 'client', 'version', 'port', 'up-to-date', 'latest block'].map(column => colors.yellow(column));
+    const headers = ['host', 'client', 'version', 'port', 'latest block', 'when', 'up to date?'].map(column => colors.yellow(column));
 
     const rows = nodes.map(node => {
       let mark;
@@ -23,10 +23,11 @@ module.exports = {
       return [
         colors.green(node.host),
         colors.cyan(node.client),
-        colors.gray(node.version),
+        node.version,
         colors.green(node.port),
-        mark,
-        colors.gray(moment(node.latestBlockDate).fromNow())
+        node.blockNumber,
+        moment(node.latestBlockDate).fromNow(),
+        mark
       ];
     });
 
