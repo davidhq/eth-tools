@@ -16,7 +16,7 @@
   "author": "davidhq",
   "license": "MIT",
   "dependencies": {
-    "cli-table2": "^0.2.0",
+    "cli-table3": "^0.5.0",
     "colors": "^1.1.2",
     "commander": "=2.9.0",
     "homedir": "^0.6.0",
